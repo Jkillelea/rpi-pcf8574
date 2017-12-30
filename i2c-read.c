@@ -11,10 +11,9 @@
 void check(int ret, char const *msg);
 
 int main(int argc, char *argv[]) {
-  int ret;
-  int fd;
+  int ret, fd;
   char *filename = "/dev/i2c-1";
-  char i2c_addr = 0x38;
+  char  i2c_addr = 0x38;
 
   fd = open(filename, O_RDWR);
   check(fd, "file open");
@@ -28,6 +27,8 @@ int main(int argc, char *argv[]) {
   read( fd, 
         buf, 
         sizeof(buf) );
+
+  printf("%d\n", (int) *buf); // print out the data (cast as int so we see decimal)
 
   ret = close(fd);
   check(ret, "file close");
