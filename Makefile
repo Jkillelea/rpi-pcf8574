@@ -1,4 +1,12 @@
 CC = gcc
+EXECS = i2c-write
 
-i2c: i2c.c
+.PHONY: all clean
+
+all: $(EXECS)
+
+clean:
+	rm $(EXECS)
+
+%: %.c
 	$(CC) $^ -o $@
