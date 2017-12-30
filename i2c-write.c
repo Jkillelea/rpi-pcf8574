@@ -27,7 +27,11 @@ int main(int argc, char *argv[]) {
   if(argc > 1)
     data[0] = (char) atoi(argv[1]); 
 
-  data[0] = ~(data[0]); // flip bits because LEDS are low-side switched
+  /* I'm not including this anymore because i2c-read just gets the byte back, 
+   * it doesn't do any flipping. Makes more sense not to invert the bits here 
+   * so both are consistent 
+   */
+  // data[0] = ~(data[0]); // flip bits because LEDS are low-side switched
 
   write( fd, 
          data, 
