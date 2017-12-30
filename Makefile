@@ -1,5 +1,5 @@
 CC = gcc
-EXECS = i2c-write
+EXECS = i2c-write i2c-read
 
 .PHONY: all clean
 
