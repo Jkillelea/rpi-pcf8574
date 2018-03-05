@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
   ret = ioctl(fd, I2C_SLAVE, i2c_addr);
   check(ret, "ioctl");
 
-	char buf[] = {0};
+  char buf[] = {0};
 
   read( fd, 
         buf, 
